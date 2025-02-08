@@ -8,11 +8,11 @@ import globalStyles from "../../Styles/globalStyles";
 export default function VictoryPoints() {
   const [VP, setVP] = useState(0);
 
-  const tacOpsVP = useSelector((state) => state.user.value.points.tacOps);
-  const critOpsVP = useSelector((state) => state.user.value.points.critOps);
-  const killOpsVP = useSelector((state) => state.user.value.points.killOpsVP);
+  const tacOpsVP = useSelector((state) => state.points.value.tacOps);
+  const critOpsVP = useSelector((state) => state.points.value.critOps);
+  const killOpsVP = useSelector((state) => state.points.value.killOpsVP);
 
-  const primaryOp = useSelector((state) => state.user.value.points.primaryOp);
+  const primaryOp = useSelector((state) => state.points.value.primaryOp);
 
   useEffect(() => {
     switch (primaryOp) {

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import { useDispatch } from "react-redux";
-import { increaseCounter, decreaseCounter } from "../../Reducers/User";
+import { increaseCounter, decreaseCounter } from "../../Reducers/Points";
 
 export default function ButtonCustom(props) {
   const dispatch = useDispatch();

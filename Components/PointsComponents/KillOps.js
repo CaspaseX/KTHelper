@@ -6,22 +6,22 @@ import killOpsTable from "../../assets/killOpsTable";
 import Counter from "./Counter";
 
 import { useSelector, useDispatch } from "react-redux";
-import { updateKillOpsVP } from "../../Reducers/User";
+import { updateKillOpsVP } from "../../Reducers/Points";
 
 export default function KillOps() {
   const dispatch = useDispatch();
 
   const startingEnemyOperatives = useSelector(
-    (state) => state.user.value.points.startingEnemyOperatives
+    (state) => state.points.value.startingEnemyOperatives
   );
   const killedEnemyOperatives = useSelector(
-    (state) => state.user.value.points.killedEnemyOperatives
+    (state) => state.points.value.killedEnemyOperatives
   );
   const victoryPoints = useSelector(
-    (state) => state.user.value.points.killOpsVP
+    (state) => state.points.value.killOpsVP
   );
   const hasMoreKillOpsPoints = useSelector(
-    (state) => state.user.value.points.hasMoreKillOpsPoints
+    (state) => state.points.value.hasMoreKillOpsPoints
   );
 
   function calculateKillOpsPoints(startingEnemies, killedEnemies, hasBonus) {

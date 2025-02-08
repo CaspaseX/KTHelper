@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 export default function Counter(props) {
   const counterValue = useSelector(
-    (state) => state.user.value.points[props.reducerName]
+    (state) => state.points.value[props.reducerName]
   );
 
   const isSmallCounter =

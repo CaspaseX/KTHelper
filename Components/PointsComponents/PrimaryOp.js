@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 import { useDispatch, useSelector } from "react-redux";
-import { updatePrimaryOp } from "../../Reducers/User";
+import { updatePrimaryOp } from "../../Reducers/Points";
 
 export default function PrimaryOp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +16,7 @@ export default function PrimaryOp() {
   const dispatch = useDispatch();
 
   const selectedOption = useSelector(
-    (state) => state.user.value.points.primaryOp
+    (state) => state.points.value.primaryOp
   );
 
   const handleCheckboxChange = (option) => {

@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faArrowRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { useDispatch } from "react-redux";
-import { resetPoints } from "../../Reducers/User";
+import { resetPoints } from "../../Reducers/Points";
 
 export default function ResetButton() {
   const [modalVisible, setModalVisible] = useState(false);

@@ -10,7 +10,7 @@ import globalStyles from "../Styles/globalStyles";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import { useDispatch, useSelector } from "react-redux";
-import { toggleKillOpsPoints } from "../Reducers/User";
+import { toggleKillOpsPoints } from "../Reducers/Points";
 
 import Counter from "../Components/PointsComponents/Counter";
 import PrimaryOp from "../Components/PointsComponents/PrimaryOp";
@@ -22,7 +22,7 @@ export default function PointsScreen() {
   const dispatch = useDispatch();
 
   const hasMoreKillOpsPoints = useSelector(
-    (state) => state.user.value.points.hasMoreKillOpsPoints
+    (state) => state.points.value.hasMoreKillOpsPoints
   );
 
   const handleCheckBoxToggle = () => {
