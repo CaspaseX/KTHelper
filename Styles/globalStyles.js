@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 const globalStyles = StyleSheet.create({
   container: {
-    paddingTop:40,
+    paddingTop:'10%',
     flex: 1,
     backgroundColor: "#343a40",
     alignItems: "center",
@@ -11,7 +12,12 @@ const globalStyles = StyleSheet.create({
   text: {
     color: "white",
     fontFamily: "Oswald",
-    fontSize:38
+    fontSize:RFPercentage(4)
+  },
+  smallText: {
+    color: "white",
+    fontFamily: "Oswald",
+    fontSize:RFPercentage(2)
   },
 });
 

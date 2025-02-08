@@ -64,8 +64,8 @@ export default function KillOps() {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={[globalStyles.text, styles.header]}>Kill Ops</Text>
-        <Text style={[globalStyles.text, styles.victoryPoints]}>
+        <Text style={globalStyles.text}>Kill Ops</Text>
+        <Text style={[globalStyles.smallText, styles.victoryPoints]}>
           Current Kill Grade : {victoryPoints}
         </Text>
       </View>
@@ -92,22 +92,18 @@ export default function KillOps() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
+    padding: "1.8%",
   },
   headerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 5,
-  },
-  header: {
-    fontSize: 38,
+    marginBottom: '2%',
   },
   victoryPoints: {
-    fontSize: 20,
     fontWeight: "600",
     color: "#c54c21",
-    paddingRight: 30,
+    paddingRight: '3%',
   },
   countersContainer: {
     flexDirection: "column",

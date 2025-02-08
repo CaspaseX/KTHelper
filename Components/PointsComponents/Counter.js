@@ -15,7 +15,7 @@ export default function Counter(props) {
 
   return (
     <View style={[styles.container, isSmallCounter && styles.smallContainer]}>
-      <Text style={[globalStyles.text, isSmallCounter && styles.smallText]}>
+      <Text style={[globalStyles.text, isSmallCounter && globalStyles.smallText]}>
         {props.name}
       </Text>
 
@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     justifyContent: "space-between",
-    paddingLeft: 5,
+    paddingLeft: "1.8%",
   },
   buttonContainer: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 10,
+    paddingHorizontal: "1.8%",
     justifyContent: "flex-end",
     minWidth: 100,
     alignSelf: "flex-end",
@@ -66,10 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   smallContainer: {
-    paddingLeft: 5,
-  },
-  smallText: {
-    fontSize: 16,
+    paddingLeft: "1.8%",
   },
   smallCounterContainer: {
     minWidth: 35,

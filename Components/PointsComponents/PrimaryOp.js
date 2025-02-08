@@ -48,7 +48,7 @@ export default function PrimaryOp() {
           style={[styles.optionContainer, !isVisible && styles.hiddenContent]}
         >
           <View style={styles.option}>
-            <Text style={styles.optionText}>TacOp</Text>
+            <Text style={globalStyles.smallText}>TacOp</Text>
             <Checkbox
               status={selectedOption === "TacOp" ? "checked" : "unchecked"}
               onPress={() => handleCheckboxChange("TacOp")}
@@ -57,7 +57,7 @@ export default function PrimaryOp() {
             />
           </View>
           <View style={styles.option}>
-            <Text style={styles.optionText}>CritOp</Text>
+            <Text style={globalStyles.smallText}>CritOp</Text>
             <Checkbox
               status={selectedOption === "CritOp" ? "checked" : "unchecked"}
               onPress={() => handleCheckboxChange("CritOp")}
@@ -66,7 +66,7 @@ export default function PrimaryOp() {
             />
           </View>
           <View style={styles.option}>
-            <Text style={styles.optionText}>KillOp</Text>
+            <Text style={globalStyles.smallText}>KillOp</Text>
             <Checkbox
               status={selectedOption === "KillOp" ? "checked" : "unchecked"}
               onPress={() => handleCheckboxChange("KillOp")}
@@ -85,20 +85,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 10,
+    marginBottom: '2%',
   },
   iconWrapper: {
     position: "relative",
     top: 4,
-    marginLeft: 20,
+    marginLeft: '5%',
   },
   card: {
     backgroundColor: "#333",
     width: "100%",
     height: 60,
-    padding: 10,
+    padding: '4%',
     borderRadius: 10,
     justifyContent: "center",
+    marginBottom:'3%'
   },
   optionContainer: {
     flexDirection: "row",
@@ -114,9 +115,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     width: "30%",
-  },
-  optionText: {
-    color: "white",
-    fontSize: 16,
   },
 });

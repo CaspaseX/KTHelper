@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#c54c21",
     alignItems: "center",
     justifyContent: "center",
-    margin: 5,
+    margin: "1.8%",
   },
   smallDarkButton: {
     width: 28,

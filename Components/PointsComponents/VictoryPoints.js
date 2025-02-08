@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 import { useState, useEffect } from "react";
 
@@ -30,5 +30,10 @@ export default function VictoryPoints() {
     }
   }, [tacOpsVP, critOpsVP, killOpsVP, primaryOp]);
 
-  return <Text style={globalStyles.text}>Total Victory Points : {VP}</Text>;
+  return <Text style={[globalStyles.text, styles.textVictory]}>Total Victory Points : {VP}</Text>;
 }
+
+const styles = StyleSheet.create({
+  textVictory: {
+    
+  },})
