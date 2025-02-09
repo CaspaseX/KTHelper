@@ -47,6 +47,7 @@ export default function OperativesScreen() {
           <KillTeamCard
             killTeam={item}
             operatives={operatives.filter((op) => op.killTeamId === item.id)}
+            initiallyCollapsed={false} // La prop pour forcer l'ouverture initiale
           />
         )}
         keyExtractor={(item) => item.id.toString()}

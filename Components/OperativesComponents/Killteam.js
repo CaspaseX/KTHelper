@@ -12,15 +12,21 @@ import {
 } from "react-native";
 import globalStyles from "../../Styles/globalStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faChevronDown, faChevronUp, faCamera, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faCamera,
+  faEdit,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
 import OperativeCard from "./Operatives";
 import { useDispatch } from "react-redux";
 import { addOperative, updateKillTeam, deleteKillTeam } from "../../Reducers/Operatives";
 import * as ImagePicker from "expo-image-picker";
 
-export default function KillTeamCard({ killTeam, operatives }) {
-  const [collapsed, setCollapsed] = useState(true);
+export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed = true }) {
+  const [collapsed, setCollapsed] = useState(initiallyCollapsed);
   const [modalVisible, setModalVisible] = useState(false);
   const [editKillTeamModalVisible, setEditKillTeamModalVisible] = useState(false);
   const [newOperativeName, setNewOperativeName] = useState("");
@@ -100,6 +106,7 @@ export default function KillTeamCard({ killTeam, operatives }) {
 
   return (
     <View style={styles.container}>
+      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity
           onPress={() => setEditKillTeamModalVisible(true)}
@@ -117,6 +124,7 @@ export default function KillTeamCard({ killTeam, operatives }) {
         </TouchableOpacity>
       </View>
 
+      {/* Expanded Content */}
       {!collapsed && (
         <ScrollView contentContainerStyle={styles.scrollContent}>
           {operatives.map((operative) => (
@@ -132,6 +140,7 @@ export default function KillTeamCard({ killTeam, operatives }) {
         </ScrollView>
       )}
 
+      {/* Add Operative Modal */}
       <Modal
         visible={modalVisible}
         transparent={true}
@@ -190,6 +199,7 @@ export default function KillTeamCard({ killTeam, operatives }) {
         </View>
       </Modal>
 
+      {/* Edit Kill Team Modal */}
       <Modal
         visible={editKillTeamModalVisible}
         transparent={true}
