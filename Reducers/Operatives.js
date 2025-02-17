@@ -28,7 +28,13 @@ export const operativesSlice = createSlice({
       state.value = state.value.filter((operative) => operative.killTeamId !== id);
     },
     addOperative: (state, action) => {
-      const { name, maxHealth, killTeamId, photo } = action.payload;
+      const { name, killTeamId, photo } = action.payload;
+      let maxHealth = Number(action.payload.maxHealth);
+    
+      if (isNaN(maxHealth) || maxHealth < 0) {
+        maxHealth = 0;
+      }
+    
       state.value.push({
         id: Date.now(),
         name,
@@ -39,7 +45,14 @@ export const operativesSlice = createSlice({
       });
     },
     updateOperative: (state, action) => {
-      const { id, name, maxHealth, photo } = action.payload;
+      const { id, name, photo } = action.payload;
+
+      let maxHealth = Number(action.payload.maxHealth);
+    
+      if (isNaN(maxHealth) || maxHealth < 0) {
+        maxHealth = 0;
+      }
+
       const operative = state.value.find((op) => op.id === id);
       if (operative) {
         if (name !== undefined) operative.name = name;

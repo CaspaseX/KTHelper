@@ -106,7 +106,7 @@ export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed 
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+
       <View style={styles.header}>
         <TouchableOpacity
           onPress={() => setEditKillTeamModalVisible(true)}
@@ -124,7 +124,6 @@ export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed 
         </TouchableOpacity>
       </View>
 
-      {/* Expanded Content */}
       {!collapsed && (
         <ScrollView contentContainerStyle={styles.scrollContent}>
           {operatives.map((operative) => (
@@ -140,7 +139,6 @@ export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed 
         </ScrollView>
       )}
 
-      {/* Add Operative Modal */}
       <Modal
         visible={modalVisible}
         transparent={true}
@@ -149,7 +147,6 @@ export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed 
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Add New Operative</Text>
 
             <View style={styles.photoContainer}>
               <Image
@@ -199,7 +196,6 @@ export default function KillTeamCard({ killTeam, operatives, initiallyCollapsed 
         </View>
       </Modal>
 
-      {/* Edit Kill Team Modal */}
       <Modal
         visible={editKillTeamModalVisible}
         transparent={true}
@@ -295,26 +291,21 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
   },
-  modalTitle: {
-    ...globalStyles.smallText,
-    fontSize: 18,
-    marginBottom: 15,
-  },
   photoContainer: {
     position: "relative",
     marginBottom: 15,
   },
   photo: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 140,
+    height: 140,
+    borderRadius: 70,
   },
   cameraButton: {
     position: "absolute",
     bottom: 0,
     right: 0,
     backgroundColor: "#c54c21",
-    borderRadius: 15,
+    borderRadius: 8,
     padding: 5,
   },
   input: {
