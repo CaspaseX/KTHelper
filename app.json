@@ -4,27 +4,22 @@
     "slug": "KTHelper",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icons/icon.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/icons/splash-icon.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#343a40"
     },
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.caspasex.KTHelper"
-    },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#343a40"
       },
       "package": "com.caspasex.KTHelper"
     },
     "web": {
-      "favicon": "./assets/icons/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"

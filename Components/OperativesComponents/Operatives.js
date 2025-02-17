@@ -36,7 +36,7 @@ export default function OperativeCard({ operativeId }) {
       return;
     }
 
-    const result = await ImagePicker.launchCameraAsync();
+    const result = await ImagePicker.launchCameraAsync({ cameraType: 'back' });
 
     if (!result.canceled) {
       dispatch(
@@ -74,9 +74,16 @@ export default function OperativeCard({ operativeId }) {
     );
   };
 
+  const healthPercentage = (operative.health / operative.maxHealth) * 100;
+  const healthTextColor = operative.health === 0 ? "#777" : healthPercentage < 50 ? "#8B0000" : "white";
+  const cardOpacity = operative.health === 0 ? 0.6 : 1;
+
   return (
     <>
-      <TouchableOpacity style={styles.card} onPress={() => setModalVisible(true)}>
+      <TouchableOpacity
+        style={[styles.card, { opacity: cardOpacity }]}
+        onPress={() => setModalVisible(true)}
+      >
         <View style={styles.inlineContainer}>
           <View style={styles.badge}>
             <Image
@@ -112,7 +119,7 @@ export default function OperativeCard({ operativeId }) {
             >
               <FontAwesomeIcon icon={faMinus} size={12} color="white" />
             </TouchableOpacity>
-            <Text style={[globalStyles.text, styles.health]}>
+            <Text style={[globalStyles.text, styles.health, { color: healthTextColor }]}> 
               {operative.health} / {operative.maxHealth}
             </Text>
             <TouchableOpacity
@@ -141,9 +148,6 @@ export default function OperativeCard({ operativeId }) {
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
-            <Text style={[globalStyles.smallText, styles.modalTitle]}>
-              Edit Operative
-            </Text>
             <View style={styles.modalImageContainer}>
               <Image
                 source={
@@ -157,7 +161,7 @@ export default function OperativeCard({ operativeId }) {
                 onPress={handleImagePick}
                 style={styles.cameraButton}
               >
-                <FontAwesomeIcon icon={faCamera} size={16} color="white" />
+                <FontAwesomeIcon icon={faCamera} size={20} color="white" />
               </TouchableOpacity>
             </View>
             <TextInput
@@ -181,25 +185,19 @@ export default function OperativeCard({ operativeId }) {
                 onPress={handleDelete}
               >
                 <FontAwesomeIcon icon={faTrash} size={16} color="white" />
-                <Text style={[globalStyles.smallText, styles.deleteText]}>
-                  Delete
-                </Text>
+                <Text style={[globalStyles.smallText, styles.deleteText]}>Delete</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.modalButton, styles.cancelButton]}
                 onPress={() => setModalVisible(false)}
               >
-                <Text style={[globalStyles.smallText, styles.buttonText]}>
-                  Cancel
-                </Text>
+                <Text style={[globalStyles.smallText, styles.buttonText]}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.modalButton, styles.saveButton]}
                 onPress={handleSave}
               >
-                <Text style={[globalStyles.smallText, styles.buttonText]}>
-                  Save
-                </Text>
+                <Text style={[globalStyles.smallText, styles.buttonText]}>Save</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -208,6 +206,7 @@ export default function OperativeCard({ operativeId }) {
     </>
   );
 }
+
 
 const styles = StyleSheet.create({
   card: {
@@ -266,18 +265,14 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
   },
-  modalTitle: {
-    marginBottom: 15,
-  },
   modalImageContainer: {
     alignItems: "center",
-    marginBottom: 15,
+    marginBottom: 20,
   },
   photoLarge: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    marginBottom: 10,
+    width: 140,
+    height: 140,
+    borderRadius: 70,
   },
   cameraButton: {
     backgroundColor: "#c54c21",

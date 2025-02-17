@@ -58,6 +58,11 @@ export const operativesSlice = createSlice({
       const { id } = action.payload;
       state.value = state.value.filter((operative) => operative.id !== id);
     },
+    resetAllOperativeHealth: (state, action)=>{
+      state.value.forEach(op=>{
+        op.health = op.maxHealth;
+      })
+    }
   },
 });
 
@@ -69,6 +74,7 @@ export const {
   updateOperative,
   updateHealth,
   deleteOperative,
+  resetAllOperativeHealth
 } = operativesSlice.actions;
 
 export default operativesSlice.reducer;

@@ -13,6 +13,7 @@ import { faArrowRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { useDispatch } from "react-redux";
 import { resetPoints } from "../../Reducers/Points";
+import { resetAllOperativeHealth } from "../../Reducers/Operatives";
 
 export default function ResetButton() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,6 +21,7 @@ export default function ResetButton() {
 
   const handleConfirm = () => {
     dispatch(resetPoints());
+    dispatch(resetAllOperativeHealth());
     setModalVisible(false);
   };
 
@@ -42,7 +44,8 @@ export default function ResetButton() {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <Text style={styles.modalText}>
-              Are you sure you want to reset all points?
+              Game over ? 
+              Do you wish to reset all points and operative wounds ?
             </Text>
 
             <View style={styles.modalButtonContainer}>

@@ -21,6 +21,7 @@
     "@react-navigation/native": "6",
     "@reduxjs/toolkit": "^2.5.1",
     "expo": "~52.0.30",
+    "expo-dev-client": "~5.0.11",
     "expo-font": "~13.0.3",
     "expo-image-picker": "^16.0.5",
     "expo-status-bar": "~2.0.1",
